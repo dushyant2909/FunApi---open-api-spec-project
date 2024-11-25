@@ -1,0 +1,25 @@
+openapi: 3.1.0
+info:
+  title: FunAPI
+  version: 1.0.0
+  description: A fun API for random jokes, users, and quotes
+servers:
+  - url: http://localhost:3000
+paths:
+  /api/jokes:
+    get:
+      summary: Get a random joke
+      responses:
+        "200":
+          description: A random joke
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  category:
+                    type: string
+                  joke:
+                    type: string
