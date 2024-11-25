@@ -2,6 +2,7 @@ import express from 'express'
 import swaggerUi from 'swagger-ui-express'
 import dotenv from 'dotenv'
 import yaml from 'yamljs'
+import jokesRouter from './routes/jokes.js'
 
 dotenv.config()
 
@@ -18,6 +19,8 @@ app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument))
 app.get('/', (req, res) => {
     res.send("Welcome to FunApi! Go to /docs for API documentation")
 })
+
+app.use('/api/jokes', jokesRouter)
 
 // Start the server
 app.listen(PORT, () => {
