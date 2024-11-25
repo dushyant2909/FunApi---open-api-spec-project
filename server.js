@@ -4,6 +4,7 @@ import dotenv from 'dotenv'
 import yaml from 'yamljs'
 import jokesRouter from './routes/jokes.js'
 import userRouter from './routes/users.js'
+import quotesRouter from './routes/quotes.js'
 
 dotenv.config()
 
@@ -23,6 +24,7 @@ app.get('/', (req, res) => {
 
 app.use('/api/jokes', jokesRouter)
 app.use('/api/users', userRouter)
+app.use('/api/quotes', quotesRouter)
 
 // Start the server
 app.listen(PORT, () => {
