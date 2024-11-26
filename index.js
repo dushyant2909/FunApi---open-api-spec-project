@@ -15,7 +15,8 @@ const PORT = process.env.PORT || 3000;
 const swaggerDocument = yaml.load('./swagger/swagger.yaml')
 
 // Middleware to serve Swagger UI
-app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument))
+// Now / route will show api doc
+app.use('/', swaggerUi.serve, swaggerUi.setup(swaggerDocument))
 
 // Base route
 app.get('/', (req, res) => {
